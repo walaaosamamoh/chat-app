@@ -54,6 +54,7 @@ export default{
 <style>
 .chat-area{
     flex:1;
+    /* min-width:70%; */
     display:flex;
     flex-direction:column;
 }
@@ -142,7 +143,7 @@ export default{
         font-size:14px
     }
     .send-msg{
-        padding:10px
+        padding:2px
     }
 }
 </style>
