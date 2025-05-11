@@ -1,24 +1,15 @@
 <template>
     <div class="chat-area">
         <div class="chat-header">
-<<<<<<< HEAD
             <div class="avatar"><img class="profile-pic" :src="selectedUser.userpic" /></div>
             <div class="info">
                 <p v-if="selectedUser"> {{ selectedUser.username}} </p>
                 <span v-if="selectedUser && selectedUser.isActive===true">Active now</span>
                 <span v-else-if="selectedUser && selectedUser.isActive===false">Offline now</span>
-=======
-            <div class="avatar"><img class="profile-pic" :src="selectedUser.img" /></div>
-            <div class="info">
-                <p v-if="selectedUser">{{ selectedUser.name }} </p>
-                <span v-if="selectedUser && selectedUser.isActive==='true'">Active now</span>
-                <span v-else-if="selectedUser && selectedUser.isActive==='false'">Offline now</span>
->>>>>>> a56cd2b (first commit)
             </div>
         </div>
         <div class="chat-box">
             <div class="reciever">
-<<<<<<< HEAD
                 <div class="avatar" v-if="selectedUser.lastMessage">
                     <img class="profile-pic" :src="selectedUser.userpic" />
                 </div>
@@ -30,12 +21,6 @@
                 </div>
             </div>
             <p v-if="!selectedUser || messages[selectedUser.id].length===0 "> No messages are available. Once you send message .they will appear here.</p>
-=======
-                <div class="avatar" v-if="selectedUser.lastMessage"><img class="profile-pic" :src="selectedUser.img" /></div>
-                <span class=" lastmsg" v-if="selectedUser.lastMessage">{{ selectedUser.lastMessage }}</span>
-            </div>
-            <p v-if="!selectedUser.lastMessage">No messages are available. Once you send message they will appear here.</p>
->>>>>>> a56cd2b (first commit)
         </div>
         <div class="send-msg">
             <input type="text" placeholder="Type a message here..." v-model="msg"/>
@@ -46,7 +31,6 @@
 
 <script>
 export default{
-<<<<<<< HEAD
     props: ['users', 'selectedUser','messages'],
     data(){
         return{
@@ -64,10 +48,6 @@ export default{
         }
        }
     }
-=======
-    props: ['selectedUser'],
-
->>>>>>> a56cd2b (first commit)
 }
 </script>
 
@@ -109,7 +89,6 @@ export default{
     height:40px;
     display:inline-block
 }
-<<<<<<< HEAD
 
 .sender-message{
     display:flex;
@@ -123,12 +102,6 @@ export default{
     width:fit-content;
     margin-bottom:10px;
     align-self: flex-end;
-=======
-.lastmsg{
-    padding:15px;
-    border-radius: 20px 20px 20px 0;
-    background-color:#fff
->>>>>>> a56cd2b (first commit)
 }
 .newmsg{
     padding:15px;
@@ -143,11 +116,7 @@ export default{
 }
 
 .send-msg input{
-<<<<<<< HEAD
     width:100%;
-=======
-    flex:1;
->>>>>>> a56cd2b (first commit)
     border: 1px solid #d0c8c8;
     border-radius: 6px 0 0 6px;
     padding: 10px;
