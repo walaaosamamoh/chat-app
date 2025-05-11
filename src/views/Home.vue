@@ -1,8 +1,13 @@
 <template >
     <div class="home-page">
         <div class="container">
+<<<<<<< HEAD
             <UsersArea :users="users" :currentUser="currentUser" @select-user= "handleSelection" :messages="messages" />
             <ChatArea :users="users" :selected-user="selectedUser" :messages="messages"/>
+=======
+            <UsersArea :users="users" @select-user= "handleSelection"/>
+            <ChatArea :selected-user="selectedUser"/>
+>>>>>>> a56cd2b (first commit)
         </div>
     </div>
 </template>
@@ -16,6 +21,7 @@ export default{
 
     data() {
     return {
+<<<<<<< HEAD
       // users: [
       //   {id:1, name:'Ahmed Mohamed',img:'/images/verne-ho-0LAJfSNa-xQ-unsplash.jpg',isActive:'true',lastMessage:'hi'},
       //   {id:2, name:'W L',img:'/images/verne-ho-0LAJfSNa-xQ-unsplash.jpg',isActive:'false'},
@@ -41,6 +47,18 @@ mounted(){
 
 },
 
+=======
+      users: [
+        {id:1, name:'Ahmed Mohamed',img:'/images/verne-ho-0LAJfSNa-xQ-unsplash.jpg',isActive:'true',lastMessage:'hi'},
+        {id:2, name:'W L',img:'/images/verne-ho-0LAJfSNa-xQ-unsplash.jpg',isActive:'false'},
+        {id:3, name:'Omer Mohamed',img:'/images/verne-ho-0LAJfSNa-xQ-unsplash.jpg',isActive:'false',lastMessage:'hello'},
+        {id:4, name:'Mona Mohamed',img:'/images/verne-ho-0LAJfSNa-xQ-unsplash.jpg',isActive:'true'},
+      ],
+      selectedUser: ''
+    }
+},
+
+>>>>>>> a56cd2b (first commit)
 // computed: {
 //     filteredMessages() {
 //       if (!this.selectedUser) return [];
@@ -62,14 +80,20 @@ mounted(){
 <style>
 .home-page{
     display: flex;
+<<<<<<< HEAD
     padding:45px 10px;
      height:100vh
   }
+=======
+    height: 100vh;
+}
+>>>>>>> a56cd2b (first commit)
 
 .home-page .container{
     gap :20px;
     flex-direction:row;
     width:100%;
+<<<<<<< HEAD
     margin: 0 auto;
    
 }
@@ -82,5 +106,8 @@ mounted(){
     margin: 0 auto;
     gap:5px
   }
+=======
+    margin: 45px 10px
+>>>>>>> a56cd2b (first commit)
 }
 </style>
