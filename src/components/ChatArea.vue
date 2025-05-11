@@ -1,19 +1,26 @@
 <template>
     <div class="chat-area">
         <div class="chat-header">
-            <div class="avatar"><img class="profile-pic" :src="selectedUser.img" /></div>
+            <div class="avatar"><img class="profile-pic" :src="selectedUser.userpic" /></div>
             <div class="info">
-                <p v-if="selectedUser">{{ selectedUser.name }} </p>
-                <span v-if="selectedUser && selectedUser.isActive==='true'">Active now</span>
-                <span v-else-if="selectedUser && selectedUser.isActive==='false'">Offline now</span>
+                <p v-if="selectedUser"> {{ selectedUser.username}} </p>
+                <span v-if="selectedUser && selectedUser.isActive===true">Active now</span>
+                <span v-else-if="selectedUser && selectedUser.isActive===false">Offline now</span>
             </div>
         </div>
         <div class="chat-box">
             <div class="reciever">
-                <div class="avatar" v-if="selectedUser.lastMessage"><img class="profile-pic" :src="selectedUser.img" /></div>
-                <span class=" lastmsg" v-if="selectedUser.lastMessage">{{ selectedUser.lastMessage }}</span>
+                <div class="avatar" v-if="selectedUser.lastMessage">
+                    <img class="profile-pic" :src="selectedUser.userpic" />
+                </div>
+                <div class=" lastmsg" v-if="selectedUser.lastMessage">{{ selectedUser.lastMessage }}</div>
             </div>
-            <p v-if="!selectedUser.lastMessage">No messages are available. Once you send message they will appear here.</p>
+            <div class="sender">
+                <div class="sender-message" v-for="message in messages[selectedUser.id]" :key="message.msg" >
+                    <div>{{ message.msg }}</div>
+                </div>
+            </div>
+            <p v-if="!selectedUser || messages[selectedUser.id].length===0 "> No messages are available. Once you send message .they will appear here.</p>
         </div>
         <div class="send-msg">
             <input type="text" placeholder="Type a message here..." v-model="msg"/>
@@ -24,14 +31,29 @@
 
 <script>
 export default{
-    props: ['selectedUser'],
+    props: ['users', 'selectedUser','messages'],
+    data(){
+        return{
+            msg:''
+        }
+    },
 
+    methods:{
+       sendMessage(){
+        if(this.selectedUser){
+            if(this.msg.trim()!==''){
+            this.messages[this.selectedUser.id].push({msg: this.msg.trim() });
+           }
+           this.msg='';
+        }
+       }
+    }
 }
 </script>
 
 <style>
 .chat-area{
-    width:70%;
+    flex:1;
     display:flex;
     flex-direction:column;
 }
@@ -67,10 +89,19 @@ export default{
     height:40px;
     display:inline-block
 }
-.lastmsg{
-    padding:15px;
-    border-radius: 20px 20px 20px 0;
-    background-color:#fff
+
+.sender-message{
+    display:flex;
+    flex-direction:column;
+}
+.sender-message div{
+    padding:8px 10px;
+    border-radius: 20px 20px 0 20px;
+    background-color: rgba(0, 0, 0, 80%);
+    color: #fff;
+    width:fit-content;
+    margin-bottom:10px;
+    align-self: flex-end;
 }
 .newmsg{
     padding:15px;
@@ -85,7 +116,7 @@ export default{
 }
 
 .send-msg input{
-    flex:1;
+    width:100%;
     border: 1px solid #d0c8c8;
     border-radius: 6px 0 0 6px;
     padding: 10px;
@@ -104,5 +135,14 @@ export default{
     display:flex;
     justify-content:center;
     align-items:center
+}
+
+@media(max-width:767px){
+    .chat-box p{
+        font-size:14px
+    }
+    .send-msg{
+        padding:10px
+    }
 }
 </style>

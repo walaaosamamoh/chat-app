@@ -80,18 +80,23 @@
               } else if(!this.file){
                   this.message ='Please upload an image file - jpeg, png, jpg'
               } else{
-                  const savedUsers = JSON.parse(localStorage.getItem('users')) || [];
-                  savedUsers.push({
+                  const reader = new FileReader();
+                  reader.onload = ()=>{
+                    const savedUsers = JSON.parse(localStorage.getItem('users')) || [];
+                    savedUsers.push({
                     id: Date.now(),
-                    username : this.fname + '' + this.lname,
+                    username : this.fname + ' ' + this.lname,
                     useremail: this.email,
                     userpassword: this.password,
-                    userpic : URL.createObjectURL(this.file)
+                    userpic : reader.result,
+                    isActive: true
                   })
                   localStorage.setItem('users', JSON.stringify(savedUsers));
                   localStorage.setItem('currentUser', JSON.stringify(savedUsers[savedUsers.length - 1]));
                   
                   this.$router.push('./home')
+                  }
+                  reader.readAsDataURL(this.file)
               }     
           }
       }
@@ -108,7 +113,8 @@
   .container form .full-name div{
     display: flex;
     flex-direction: column;
-    flex:1
+    flex:1;
+    min-width:0;
   }
 
   .container form input[type="file"]{
@@ -116,4 +122,12 @@
     font-size: 16px;
     padding: 0;
   }  
+
+  @media(max-width:767px){
+    .container form .full-name{
+      flex-direction:column;
+      gap:0;
+      width:100%
+    }
+  }
 </style>
