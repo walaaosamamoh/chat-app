@@ -22,12 +22,8 @@ a{
     display: flex;
     justify-content: center;
     align-items:center;
-<<<<<<< HEAD
     padding:20px 0;
     height: 100vh; 
-=======
-    height: 100vh;
->>>>>>> a56cd2b (first commit)
 }
 
 .container{
@@ -37,7 +33,6 @@ a{
     border-radius: 16px;
     display: flex;
     flex-direction:column ;
-<<<<<<< HEAD
     box-shadow:0 10px 25px rgba(0,0,0,0.08)
 }
 
@@ -45,18 +40,13 @@ a{
     .container{
         width: 90%;
     }
-=======
->>>>>>> a56cd2b (first commit)
 }
 
 .container h2{
     border-bottom: 1px solid #e7e7e7;
     padding: 0 0 10px;
     margin-bottom: 20px;
-<<<<<<< HEAD
     font-weight:600
-=======
->>>>>>> a56cd2b (first commit)
 }
 
 .container .errorMsg{
@@ -75,27 +65,17 @@ a{
 }
 
 .container form label{
-<<<<<<< HEAD
     margin-bottom:3px;
     font-size:14px
-=======
-    margin-bottom:3px
->>>>>>> a56cd2b (first commit)
 }
 
 .container form input{
     border: 1px solid #d0c8c8;
     border-radius: 6px;
-<<<<<<< HEAD
     padding: 0 10px;
     margin-bottom: 8px;
     font-size: 16px; 
     height:38px
-=======
-    padding: 8px 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
->>>>>>> a56cd2b (first commit)
 }
 
  input::placeholder{
@@ -129,29 +109,17 @@ a{
     border: none;
     border-radius: 6px;
     background-color: #78b68f;
-<<<<<<< HEAD
     height: 38px;
     color: #fff;
     font-size: 16px;
     margin: 10px 0 15px ;
-=======
-    padding: 10px;
-    color: #fff;
-    font-size: 16px;
-    margin: 15px 0;
-    font-size:17px;
->>>>>>> a56cd2b (first commit)
     cursor:pointer
 }
 
 .page .container p{
     text-align: center;
     margin-bottom: 15px;
-<<<<<<< HEAD
     font-size:16px
-=======
-    font-size:17px
->>>>>>> a56cd2b (first commit)
 }
 
 .container p a{

@@ -31,7 +31,7 @@
                     <span v-if="messages">{{ user.lastMessage }}</span>
                     <span v-else>No message available </span>
                     </div>
-                    <span :class="{'active': user.isActive ===true}" > <i class="fas fa-circle"></i></span>
+                    <span class="checkActive" :class="{'active': user.isActive ===true}" > <i class="fas fa-circle"></i></span>
                 </div>
             </div>            
             <div v-else> No user found related to your search</div>
@@ -76,7 +76,7 @@ export default{
 
 <style>
 .users-area{
-    width: 30%;
+    min-width: 30%;
     overflow:hidden;
 }
 
@@ -119,6 +119,8 @@ export default{
     color: #fff;
     font-size:16px;
     padding: 6px 12px;
+    font-size:16px;
+    padding: 6px 12px;
     border-radius: 6px;
     border: none;
     cursor:pointer
@@ -126,7 +128,7 @@ export default{
 
 @media(max-width:767px){
     .users-area{
-        width: 40%;
+        min-width: 40%;
         padding:0
     }
 
@@ -166,6 +168,7 @@ export default{
     display : flex;
     align-items:center;
     margin-bottom:15px;
+    margin-bottom:15px;
 }
 
 .users-list .search span{
@@ -190,6 +193,8 @@ export default{
     border-radius: 6px 0 0 6px;
     padding:0 10px;
     height: 35px;
+    padding:0 10px;
+    height: 35px;
 }
 
 .users-list .search input:focus{
@@ -208,7 +213,12 @@ export default{
     height:40px;
 }
 
+.user-item .checkActive{
+    margin-right:0
+}
+
 .user-item i{
+    font-size:12px;
     font-size:12px;
     color:#ccc
 }
@@ -218,7 +228,8 @@ export default{
 }
 
 .user-info span{
-    color:rgba(0,0,0,70%)
+    color:rgba(0,0,0,70%);
+    font-size:14px
 }
 
 @media(max-width:767px){
@@ -245,4 +256,5 @@ export default{
         font-size:14px
     }
 }
+
 </style>

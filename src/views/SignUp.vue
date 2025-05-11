@@ -80,7 +80,6 @@
               } else if(!this.file){
                   this.message ='Please upload an image file - jpeg, png, jpg'
               } else{
-<<<<<<< HEAD
                   const reader = new FileReader();
                   reader.onload = ()=>{
                     const savedUsers = JSON.parse(localStorage.getItem('users')) || [];
@@ -91,25 +90,13 @@
                     userpassword: this.password,
                     userpic : reader.result,
                     isActive: true
-=======
-                  const savedUsers = JSON.parse(localStorage.getItem('users')) || [];
-                  savedUsers.push({
-                    id: Date.now(),
-                    username : this.fname + '' + this.lname,
-                    useremail: this.email,
-                    userpassword: this.password,
-                    userpic : URL.createObjectURL(this.file)
->>>>>>> a56cd2b (first commit)
                   })
                   localStorage.setItem('users', JSON.stringify(savedUsers));
                   localStorage.setItem('currentUser', JSON.stringify(savedUsers[savedUsers.length - 1]));
                   
                   this.$router.push('./home')
-<<<<<<< HEAD
                   }
                   reader.readAsDataURL(this.file)
-=======
->>>>>>> a56cd2b (first commit)
               }     
           }
       }
@@ -126,12 +113,8 @@
   .container form .full-name div{
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
     flex:1;
     min-width:0;
-=======
-    flex:1
->>>>>>> a56cd2b (first commit)
   }
 
   .container form input[type="file"]{
@@ -139,7 +122,6 @@
     font-size: 16px;
     padding: 0;
   }  
-<<<<<<< HEAD
 
   @media(max-width:767px){
     .container form .full-name{
@@ -148,6 +130,4 @@
       width:100%
     }
   }
-=======
->>>>>>> a56cd2b (first commit)
 </style>
