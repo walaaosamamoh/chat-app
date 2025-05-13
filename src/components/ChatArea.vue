@@ -53,8 +53,8 @@ export default{
 
 <style>
 .chat-area{
-    flex:1;
-    /* min-width:70%; */
+    /* flex:1; */
+    width:70%;
     display:flex;
     flex-direction:column;
 }

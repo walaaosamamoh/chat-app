@@ -76,7 +76,7 @@ export default{
 
 <style>
 .users-area{
-    min-width: 30%;
+    width: 30%;
     overflow:hidden;
 }
 
@@ -128,7 +128,7 @@ export default{
 
 @media(max-width:767px){
     .users-area{
-        min-width: 40%;
+        width: 40%;
         padding:0
     }
 
